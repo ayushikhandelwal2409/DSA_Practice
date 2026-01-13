@@ -1,0 +1,14 @@
+When a recursive function makes k recursive calls at each step (branching factor = k),
+the total number of calls roughly follows an exponential growth pattern:
+
+𝑇(𝑛)=𝑂(𝑘^𝑛)
+
+because: each call spawns k new calls, forming a k-ary recursion tree, of height ≈ n.
+
+
+| Branching per call | Example (roughly)                                                         | Time Complexity |
+| ------------------ | ------------------------------------------------------------------------- | --------------- |
+| 1                  | Linear recursion (like factorial, fibonacci with memo)                    | **O(n)**        |
+| 2                  | Binary recursion (like Fibonacci without memoization, House Robber naive) | **O(2ⁿ)**       |
+| 3                  | Ternary recursion (3 recursive calls per function)                        | **O(3ⁿ)**       |
+| k                  | k recursive calls per function                                            | **O(kⁿ)**       |

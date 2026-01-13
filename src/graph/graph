@@ -1,0 +1,90 @@
+// Adjacency List Generation from Edge Connections
+input: V = 4, E = 5, edges =  [[0, 1], [1, 2], [2, 3], [0, 2], [1, 3]]
+Output: [[1, 2], [0, 2, 3], [1, 3, 0], [2, 1]]
+Explanation:
+
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
+        }
+        for (int[] edge : edges) {
+            adj.get(edge[0]).add(edge[1]);
+            adj.get(edge[1]).add(edge[0]);
+        }
+
+Node 0 is connected to 1 2
+Node number 1 is connected to 0 2 3
+Node 2 is connected to 1 3 0
+Node 3 is connected to 2 1 
+
+//for undirected graph
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
+        }
+        for (int[] edge : edges) {
+            adj.get(edge[0]).add(edge[1]);
+            adj.get(edge[1]).add(edge[0]);
+        }
+
+
+//for directed graph
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
+        }
+        for (int[] edge : edges) {
+            adj.get(edge[0]).add(edge[1]);
+        }
+
+
+
+bipartite graph ==> a graph which can be coloured in two colours where no 2 adjacent nodes can have same colors.
+==> if in graph there is odd length cycle (no. of nodes in a cycle are odd ) then it is not a bipartite graph.
+==> if in graph there is even length cycle (no. of nodes in a cycle are even ) then it is  a bipartite graph.
+
+
+
+//topological sort ==> (dfs)==>(in directed acyclic graph [DAG])==> means linear ordering of vertices such that
+ if there is an edge between u and v where u comes before v in that ordering
+//topo sort in bfs==called as==> kahn's algorihtm
+
+
+
+ //Dijkstra's algorithm is a popular algorithm used to find the shortest path between nodes in a graph, especially
+ when all edge weights are non-negative. It's widely used in various applications like navigation systems, network
+  routing, and more.Dijkstra's algorithm can be applied to both directed and undirected graphs
+
+
+
+ //The Bellman-Ford algorithm is primarily used for finding the shortest path from a source node to all other nodes in
+ a graph, particularly when the graph may contain negative edge weights. It's also used to detect the presence of
+ negative cycles in a graph. ==> in directed graph
+ //A negative cycle in a graph is a cycle (a path that starts and ends at the same node) where the sum of
+ the weights of the edges in the cycle is less than zero (negative)
+
+
+
+//the Floyd–Warshall algorithm is an algorithm for finding shortest paths in a directed weighted graph with positive or
+ negative edge weights. A single execution of the algorithm will find the lengths of shortest paths between all
+ pairs of vertices.
+//Class: All-pairs shortest path problem (for weighted graphs)
+//helps to detect negative cycles
+//gives multi source shortest path
+
+
+
+//A Minimum Spanning Tree (MST) is a subset of the edges of a connected, edge-weighted undirected graph that connects
+all the vertices together, without any cycles, and with the minimum possible total edge weight.
+//or a weighted undirected graph(tree) that has n nodes and n-1 edges  where all nodes are reachable from each other.
+//Spanning Tree: A spanning tree of a graph is a subgraph that includes all vertices of the original graph and is
+also a tree (i.e., it's connected and has no cycles).
+//To find a Minimum Spanning Tree (MST) of a graph, you can use algorithms like Kruskal's or Prim's.
+ Both algorithms are greedy algorithms that find the MST by iteratively adding edges to a growing tree structure.
+
+ //A tree can have at most two centroids. If a tree has two centroids, they must be adjacent to each other.
+
+
+//Hierholzer's Algorithm for directed graph
+//Given a directed Eulerian graph, the task is to print an Euler circuit. An Euler circuit is a path that traverses
+ every edge of a graph exactly once, and the path ends on the starting vertex.(helpful in ques of places visit by
+ someone and to create itinerary)

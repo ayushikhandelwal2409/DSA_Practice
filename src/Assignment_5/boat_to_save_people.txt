@@ -1,0 +1,30 @@
+package Assignment_5;
+import java.util.*;
+
+public class boat_to_save_people {
+    public static void main(String[] args) {
+        int[] people={1,2};
+        int limit=3;
+        System.out.println(numRescueBoats(people,limit));
+    }
+    public static int numRescueBoats(int[] people, int limit) {
+        int i=0;
+        int j=people.length-1;
+        Arrays.sort(people);
+        int k=0;
+        while(i<=j){
+            if(people[i]+people[j]<=limit){
+                i++;
+            }
+            j--;
+            k++;
+        }
+        return k;
+    }
+}
+
+
+//Input: people = [1,2], limit = 3
+// Output: 1
+//tc==>O(n logn)
+//sc==>O(1)

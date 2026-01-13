@@ -1,0 +1,217 @@
+// c++ :extension =.cpp:platform dependent|
+|----------| compile |---------|   run
+|source    | =====>>>|         |  ===>>>output  (windows (T) linux(X)  mac(X))
+|  code    |         |   .exe  |
+|__________|         |_________|
+
+
+// java :extension =.java:platform independent
+|----------| compile |---------|   jvm   |----------| run
+|source    | =====>>>|  .class | ====>>>>|          |   ===>>>   output  (windows (T) linux(T)  mac(T))
+|  code    |         |         |         | .exe     |
+|__________|         |_________|         |__________|
+
+
+//In java there is a extra layer of jvm which changes code according to diff platforms
+//at the time of running the code in c++ is faster
+//jdk(java developer's kit):2 components:java compiler(javac) and java runtime environment(JRE)
+                                                                       |------>JRE consist of JVM(Java Virtual Machine) and library
+//static vs non static
+Static is a pre defined keyword Which means for a particular variable it would have the same value everywhere in that class(common for all object)
+A non static in this we can take different values for the variable in it(not common for all object)
+// static block always runs first.
+//In a static field we can't access non static things but vice versa is possible.
+
+
+//access modifier:-
+//public==everywhere
+//private==in class only
+//protected==in a package+ subclasses
+//default==in a package
+//we can use getter and setter methods to set or get something
+
+//Data Structures are ways of organizing and storing data in a computer so that it can be used efficiently.
+
+//OOPS (Object-Oriented Programming System) is a programming approach that organizes code using objects and classes. It helps structure software by modeling real-world things, making the code more reusable, manageable, and scalable.
+//It is based on four key concepts: Encapsulation, Abstraction, Inheritance, and Polymorphism.
+
+//An algorithm is a step-by-step set of instructions to solve a problem or perform a task.
+
+            Search for something (e.g., Binary Search)
+
+            Sort data (e.g., Merge Sort, Quick Sort)
+
+            Traverse structures (e.g., Trees, Graphs)
+
+            Optimize solutions (e.g., Dijkstra’s for shortest path)
+
+            Solve complex problems efficiently (e.g., Dynamic Programming)
+
+
+//Why are Algorithms Used?
+       1. To solve problems efficiently.
+       2. To optimize performance (speed, memory, etc.).
+
+
+
+Type | Description | Example Use Case
+Array | Fixed-size, indexed collection of elements | Storing a list of scores
+Linked List | Elements connected using pointers | Dynamic memory usage
+Stack | LIFO (Last In First Out) structure | Undo feature in apps
+Queue | FIFO (First In First Out) structure | Task scheduling
+Hash Table | Key-value pair storage for fast lookup | Storing user login info
+Tree | Hierarchical structure | File systems
+Graph | Nodes connected by edges | Maps, social networks
+
+
+
+data structure --->primitive ----------->(int,char,bool,float,pointer)
+               |
+               |
+               |--> non-primitive------>  linear ------>(static---             ,  dynamic--     )
+                                    |                            |                        |
+                                    |                            |                        |
+                                    |                            |--->(array)             |--->(linked list,stack,queue)
+                                    |
+                                    |
+                                    |-->non-linear------->( tree  ,  graph  )
+
+Feature	    Array	                                    ArrayList
+Size	    Fixed at creation time	                    Grows/shrinks dynamically
+Type	    Can hold both primitives and objects	    Can only hold objects (e.g., Integer, not int)
+            No built-in methods for adding/removing 	Has built-in methods like add(), remove(), contains()
+
+Feature	        String	                                                            StringBuilder
+Mutability	    Immutable (cannot change once created)	                            Mutable (can be changed)
+Performance	    Slower in repetitive operations (like concatenation in loops)	    Faster for heavy string modifications
+Memory Usage	Creates new objects for every change	                            Uses same object, so more memory efficient for changes
+
+Feature | Overloading | Overriding
+Definition | Same method name, different parameters | Same method signature in child class
+Compile-time/runtime | Compile-time | Runtime
+
+
+4 oops pillars ==>
+
+Encapsulation
+Binding data and methods into a single unit (like a class).
+Example: Making fields private and accessing them via getters/setters.
+
+Abstraction
+Hiding unnecessary details from the user.
+Example: You use a car.start() without knowing how the engine works inside.
+
+Inheritance
+One class inherits properties and behavior from another.
+Example: Dog inherits from Animal.
+
+Polymorphism
+One interface, many forms. Method overloading and overriding.
+Example: draw() method behaves differently in Circle vs Square.
+
+
+
+1. What is the difference between class and object?
+Answer:
+Class: Blueprint or template (e.g., Car).
+Object: Instance of a class (e.g., Car myCar = new Car();).
+
+
+inheritance==> extend
+encapsulation ==> classes form
+abstraction ==>interface
+
+
+
+Modifier | Access Level
+private | Within the same class only
+default | Within the same package
+protected | Same package + subclasses
+public | Anywhere
+
+
+8. Can you explain constructor overloading?
+Answer: Yes! Having multiple constructors with different parameter lists in the same class.
+
+class Car {
+    Car() { }  // default constructor
+    Car(String model) { }  // parameterized constructor
+}
+
+
+10. What is constructor chaining?
+Answer:
+When one constructor calls another constructor in the same or parent class using this() or super().
+
+class Car {
+    Car() { this("Default"); }
+    Car(String model) { System.out.println(model); }
+}
+
+
+11. What is the difference between this and super?
+Answer:
+Keyword	Purpose
+this	Refers to the current class instance
+super	Refers to the parent class instance
+
+
+12. What is a final class, method, and variable in Java?
+Answer:
+final class → Cannot be inherited.
+final method → Cannot be overridden.
+final variable → Acts as a constant, can't be reassigned.
+
+
+
+13. Can you override a static method?
+Answer:
+No. Static methods belong to the class, not objects. So they are hidden, not overridden.
+
+
+
+18. Can a class implement multiple interfaces in Java?
+Answer:
+✅ Yes! Java allows a class to implement multiple interfaces, enabling multiple inheritance behavior.
+class A implements Interface1, Interface2 { }
+19. Can a class extend an abstract class and implement an interface at the same time?
+Answer:
+✅ Yes! A class can extend one abstract class and implement multiple interfaces.
+class MyClass extends MyAbstract implements Interface1, Interface2 { }
+
+
+//An abstract class in Java:
+        1.Is declared using the abstract keyword.
+        2.Cannot be instantiated.
+        3.Can have abstract methods (without body) and concrete methods (with body).
+        4.Is meant to be extended by subclasses, which must implement the abstract methods.
+
+
+
+// Abstract class
+abstract class Animal {
+    // Abstract method (no body)
+    abstract void makeSound();
+
+    // Concrete method
+    void breathe() {
+        System.out.println("Breathing...");
+    }
+}
+
+// Subclass (inherits from Animal)
+class Dog extends Animal {
+    // Must implement abstract method
+    void makeSound() {
+        System.out.println("Woof!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Animal a = new Animal(); // ❌ Error: Cannot instantiate abstract class
+        Dog d = new Dog();          // ✅ OK
+        d.makeSound();              // Woof!
+        d.breathe();                // Breathing...
+    }
+}

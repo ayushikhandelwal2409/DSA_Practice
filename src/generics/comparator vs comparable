@@ -1,0 +1,38 @@
+Comparator ==>
+
+1.uses method compare
+2. part of java.util package
+3. Collections.sort(list,comparator)
+4. defines custom or multiple orderings for objects
+5. Compare(T o1,T o2)
+6.Can provide multiple sorting orders.
+7.Negative if 01 < 02, zero if 01==02, positive if 01 > 02.
+8. it works with wrapper classes only
+
+
+in arrays=> Arrays.sort(booleans, (b1, b2) -> <any wrapper class>.compare(b1, b2));
+eg:-Arrays.sort(booleans, (b1, b2) -> Boolean.compare(b1, b2));
+
+0r for classes in array form 
+
+Arrays.sort(people, new Comparator<Person>() {
+    @Override
+    public int compare(Person p1, Person p2) {
+        int nameCompare = p1.getName().compareTo(p2.getName());
+        if (nameCompare != 0) {
+            return nameCompare;
+        } else {
+            return p2.getAge().compareTo(p1.getAge()); // Reverse comparison for age
+        }
+    }
+});
+
+Comparable ==>
+
+1.uses method compareTo
+2.part of java.lang package
+3.Collections . sort (list) ;
+4.Defines the natural ordering of objects.
+5.compareTo(T o)
+6.Provides only one natural sorting order.
+7.Negative if this < o, zero if this==o, positive if this > o.

@@ -1,0 +1,12 @@
+import javafx.util.Pair;
+
+public class PairInitializationExample {
+    public static void main(String[] args) {
+        // Initialize a Pair with a String key and a Double value
+        Pair<String, Double> studentNameGPAPair = new Pair<>("Justin", 8.76);
+
+        System.out.println("The Pair is: " + studentNameGPAPair.toString());
+        System.out.println("The Key is: " + studentNameGPAPair.getKey());
+        System.out.println("The Value is: " + studentNameGPAPair.getValue());
+    }
+}

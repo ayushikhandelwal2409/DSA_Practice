@@ -1,0 +1,15 @@
+//wraper class datatypes takes address at background.
+//Long l=10l;
+//Integer
+//Character ch='a';
+//Boolean t=false;
+//unboxing:from stack to heap .(non primitive type to primitive type)
+//autoboxing:converting primitive type to corresponding wraper class types.
+//for Byte,Integer,Short,Long:cache array size=256(-128 to +127):
+not in float and double:in char it will always give true as its ranges within 256.
+//Integer c1=18;
+Integer c2=18;
+Integer c3=181;
+Integer c4=181;
+System.out.println(c1==c2);//true(in range)
+System.out.println(c3==c4);//false(not in range)

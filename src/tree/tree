@@ -1,0 +1,72 @@
+tree is  a hierarchical data structure or non linear data structure
+used in file system
+generic tree:no restrictions on no. of child
+4 views :
+right left top bottom
+right and left view using level traversing:
+
+
+
+ //note=>
+ root.left = nodes(root.left, ans, set);
+ root.right = nodes(root.right, ans, set);
+ 🧠 What does this REALLY mean?
+ It means:
+ “Process the left (or right) subtree recursively, and then update the current node’s left/right child
+ with whatever the recursion returns.”
+
+
+
+// In a BST, the in-order traversal yields the values in sorted order.
+
+
+
+
+//https://leetcode.ca/all/285.html
+Given the root of a binary search tree and a node p in it, return the in-order successor of that node in the BST. If the given node has no in-order successor in the tree, return null.
+
+The successor of a node p is the node with the smallest key greater than p.val.
+Input: root = [2,1,3], p = 1
+Output: 2
+Explanation: 1's in-order successor node is 2. Note that both p and the return value is of TreeNode type.
+//method 1
+class Solution {
+    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+        TreeNode ans = null;
+        while (root != null) {
+            if (root.val > p.val) {
+                ans = root;
+                root = root.left;
+            } else {
+                root = root.right;
+            }
+        }
+        return ans;
+    }
+}
+//method2
+public class TreeNode {
+		      int val;
+		      TreeNode left;
+		      TreeNode right;
+		      TreeNode(int x) { val = x; }
+		  }
+	class solution{
+		TreeNode succNode=null;
+		public TreeNode inordersucc(TreeNode root,TreeNode p) {
+			return Succ(root,p);
+		}
+		public TreeNode Succ(TreeNode root,TreeNode p) {
+			if(root==null) {
+				return null;
+			}
+			if(root.val>p.val) {
+				succNode=root;
+				Succ(root.left,p);
+			}
+			else {
+				Succ(root.right,p);
+			}
+			return succNode;
+		}
+	}

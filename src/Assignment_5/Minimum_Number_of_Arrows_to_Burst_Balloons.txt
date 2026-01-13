@@ -1,0 +1,28 @@
+package Assignment_5;
+import java.util.*;
+
+public class Minimum_Number_of_Arrows_to_Burst_Balloons {
+    public static void main(String[] args) {
+        int[][] points= {{10, 16}, {2, 8}, {1, 6}, {7, 12}};
+        System.out.println(findMinArrowShots(points));
+    }
+    public static int findMinArrowShots(int[][] points) {
+        int n=points.length;
+        int cnt=1;
+        Arrays.sort(points,(a,b)->Integer.compare(a[1],b[1]));
+        int prev = points[0][1];
+        for(int i=1;i<n;i++){
+            if(points[i][0]>prev){
+                cnt++;
+                prev=points[i][1];
+            }
+        }
+        return cnt;
+    }
+}
+
+//
+//Input: points = [[10,16],[2,8],[1,6],[7,12]]
+//Output: 2
+//tc==> O(n logn )
+//sc==>O(1)

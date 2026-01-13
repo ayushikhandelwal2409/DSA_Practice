@@ -1,0 +1,18 @@
+//strings:it is class:it is non -primitive: stored in heap :address stored in stack.
+// string is immutable.
+//in primitive: (==)compares content.
+//in non-primitive: (==)compares address.
+//in string concatenation if starting m string aa jaye toh answer m int values evaluate hoke nhi ati;
+//eg:-
+//System.out.println("Hello"+10+20+"bye"); Hello1020bye
+//System.out.println("Hello"+(10+20)+"bye"); Hello30bye
+//System.out.println(10+20+"Hello"+"bye"); 30Hellobye
+//System.out.println(20+"Hello"+10+"bye"+20); 20Hello10bye20
+// s1.substring(start,end)
+//s.length==variable hai
+// arr.length()==method hai
+
+
+
+
+
