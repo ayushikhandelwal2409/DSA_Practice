@@ -12,18 +12,18 @@ public class sieve_of_eratosthenes {
         System.out.println(ans.size());
     }
     public static void sieve(int n,ArrayList<Integer> ll){
-        boolean[] checkPrime=new boolean[n];
+        boolean[] checkPrime=new boolean[n+1];
         Arrays.fill(checkPrime,true);
         checkPrime[0]=false;
         checkPrime[1]=false;
-        for(int i=0;i*i<n;i++){
+        for(int i=0;i*i<=n;i++){
             if(checkPrime[i]){
-                for (int j = i * i; j < n; j += i) {
+                for (int j = i * i; j <=n; j += i) {
                     checkPrime[j] = false;
                 }
             }
         }
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <=n; i++) {
             if(checkPrime[i]){
                 ll.add(i);
             }
