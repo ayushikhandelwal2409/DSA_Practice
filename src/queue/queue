@@ -1,0 +1,90 @@
+📌 Queue Methods (Important)
+Method	Throws Exception	Returns null
+add()	    yes	                ❌
+offer()	    ❌	                ❌
+remove()	yes	                ❌
+poll()	    ❌	                returns null
+element()	yes	                ❌
+peek()	    ❌	                returns null
+
+Java provides Queue as Interface in java.util package.
+import java.util.Queue;
+
+Common implementations:
+✔ LinkedList
+✔ ArrayDeque
+✔ PriorityQueue
+
+
+🧩 Types of Queue
+1️⃣ Simple Queue (Linear Queue)
+
+Normal FIFO queue.
+
+Example implementation:
+
+Queue<Integer> q = new LinkedList<>();
+q.add(10);
+q.add(20);
+q.add(30);
+
+System.out.println(q.poll()); // 10
+
+2️⃣ Circular Queue
+
+Last position connects to first position (used to save space).
+
+Used in:
+✔ CPU scheduling
+✔ Buffer memory
+
+Java internal example: ArrayDeque behaves like circular array.
+
+3️⃣ Priority Queue
+
+Elements removed based on priority, not insertion order.
+
+PriorityQueue<Integer> pq = new PriorityQueue<>();
+pq.add(30);
+pq.add(10);
+pq.add(20);
+
+System.out.println(pq.poll()); // 10 (smallest first)
+
+4️⃣ Deque (Double Ended Queue)
+
+Insert/delete from both ends.
+
+Deque<Integer> dq = new ArrayDeque<>();
+dq.addFirst(10);
+dq.addLast(20);
+dq.removeFirst();
+
+| Implementation | Storage Type | Extra Memory | Speed    |
+| -------------- | ------------ | ------------ | -------- |
+| LinkedList     | Nodes (heap) | High         | Medium   |
+| ArrayDeque     | Array        | Low          | Fast     |
+| PriorityQueue  | Heap (array) | Medium       | Log time |
+
+
+Uses of Queue
+
+✔ CPU Scheduling
+✔ BFS (Graph traversal)
+✔ Printer Spooling
+✔ Call center systems
+✔ Task scheduling
+✔ Producer–Consumer problem
+✔ Message queues
+✔ Undo/Redo systems (Deque)
+
+
+Queue in DSA (Critical Interview Points)
+
+✔ FIFO
+✔ Used in BFS
+✔ Used in Sliding Window
+✔ Used in Scheduling
+✔ Circular Queue avoids wasted space
+✔ PriorityQueue uses heap
+✔ Deque = stack + queue combined
