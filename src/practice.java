@@ -2,38 +2,28 @@ import java.util.*;
 
 public class practice {
     public static void main(String[] args) {
-        Scanner in=new Scanner(System.in);
-        int t=in.nextInt();
-        while(t-->0){
-            int n=in.nextInt();
-            int[][] arr=new int[n][5];
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < 5; j++) {
-                    arr[i][j]=in.nextInt();
-                }
-            }
-            int cand=0;
-            for(int i=1;i<n;i++){
-                if(isbetter(arr[i],arr[cand])){ //if athlete i is better than athlete cand
-                    cand=i;
-                }
-            }
-            boolean check=true;
-            for(int i=0;i<n;i++){
-                if(i != cand && isbetter(arr[i],arr[cand])){
-                    check=false;
-                    break;
-                }
-            }
-            if(check) System.out.println(cand+1);
-            else System.out.println(-1);
+        Scanner in = new Scanner(System.in);
+        int n=in.nextInt();
+        int m=in.nextInt();
+        int[] arr=new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i]=in.nextInt();
         }
-    }
-    public static boolean isbetter(int[] a ,int[] b){
-        int cnt=0;
-        for (int i = 0; i < a.length; i++) {
-            if(a[i]<b[i]) cnt++;
+        int c=0;
+        int sum=0;
+        int leftover=0;
+        for (int i = 0; i < n; i++) {
+            if(arr[i]<=leftover) {
+                sum += arr[i];
+                leftover=m-sum;
+            }
+            else{
+                c++;
+                leftover=0;
+                sum=arr[i];
+                leftover=m-sum;
+            }
         }
-        return cnt>=3;
+        System.out.println(c);
     }
 }
