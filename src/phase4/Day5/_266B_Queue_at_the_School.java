@@ -1,6 +1,8 @@
-import java.util.*;
+package phase4.Day5;
 
-public class practice {
+import java.util.Scanner;
+
+public class _266B_Queue_at_the_School {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n=in.nextInt();
@@ -26,6 +28,22 @@ public class practice {
             s=sb.toString();
             m--;
         }
-        System.out.println(s);
+    System.out.println(s);
     }
 }
+//Examples
+//InputCopy
+//5 1
+//BGGBG
+//OutputCopy
+//GBGGB
+//InputCopy
+//5 2
+//BGGBG
+//OutputCopy
+//GGBGB
+//InputCopy
+//4 1
+//GGGB
+//OutputCopy
+//GGGB
